@@ -4,8 +4,8 @@
 
 const CONFIG = {
   // ==================== EMAILJS CONFIGURATION ====================
-  EMAILJS_SERVICE_ID: 'service_d8rz4el',
-  EMAILJS_TEMPLATE_ID: 'your_template_id',
+  EMAILJS_SERVICE_ID: 'service_mcgodcc',
+  EMAILJS_TEMPLATE_ID: 'template_cvozkw7',
   EMAILJS_PUBLIC_KEY: 'x7f8JzFcgTdblbK3Q',
   YOUR_EMAIL: 'abhishek242443@gmail.com',
   
