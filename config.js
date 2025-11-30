@@ -3,6 +3,11 @@
 // ============================================
 
 const CONFIG = {
+  // ==================== RESUME CONFIGURATION ====================
+  
+  RESUME_PATH: 'resume/Resume.pdf',  
+  RESUME_FILENAME: 'Abhishek_Sahani_Resume.pdf',  
+  
   // ==================== EMAILJS CONFIGURATION ====================
   EMAILJS_SERVICE_ID: 'service_mcgodcc',
   EMAILJS_TEMPLATE_ID: 'template_cvozkw7',
@@ -34,7 +39,7 @@ const CONFIG = {
     7: 'images/certificates/powerbi-micro-satish.jpg',
     8: 'images/certificates/excel-satish.jpg',
     9: 'images/certificates/tally-sharp.jpg',
-    10: 'images/certificates/internship-novitech.jpg'  // Internship certificate
+    10: 'images/certificates/internship-novitech.jpg'
   },
   
   // ==================== PROJECT IMAGES ====================
@@ -95,4 +100,3 @@ const CONFIG = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = CONFIG;
 }
-

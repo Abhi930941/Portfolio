@@ -35,20 +35,41 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <div class="profile-photo">
-        <img src="https://ui-avatars.com/api/?name=Abhishek+Sahani&size=200&background=6366f1&color=fff&bold=true" alt="Profile Photo" id="profileImage" />
-      </div>
-      <h1>Hi, I'm <span class="gradient-text">Abhishek Sahani</span></h1>
-      <p class="subtitle">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
-      <p>Passionate about creating innovative solutions and bringing ideas to life through code.</p>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-      </div>
+<section id="home" class="hero">
+  <div class="hero-content">
+    
+    <!-- Profile Photo with Animations -->
+    <div class="profile-photo">
+      <img src="https://ui-avatars.com/api/?name=Abhishek+Sahani&size=250&background=6366f1&color=fff&bold=true" alt="Profile Photo" id="profileImage" />
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
     </div>
-  </section>
+    
+    <h1>Hi, I'm <span class="gradient-text">Abhishek Sahani</span></h1>
+    
+    <!-- Typing Animation Container -->
+    <div class="typing-container">
+      <p class="subtitle">
+        <span class="typing-text" id="typingText"></span>
+      </p>
+    </div>
+    
+    <p>Passionate about creating innovative solutions and bringing ideas to life through code. Specialized in building scalable web applications with modern technologies.</p>
+    
+    <div class="cta-buttons">
+      <a href="#projects" class="btn btn-primary">
+        View My Work
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <button id="downloadResumeBtn" class="btn btn-secondary">
+        <i class="fas fa-download"></i>
+        Download Resume
+      </button>
+    </div>
+  </div>
+</section>
 
    <!-- About Section -->
   <section id="about">
@@ -56,11 +77,28 @@
     <p class="section-subtitle">Get to know more about my journey</p>
     <div class="about-content">
       <div class="about-text">
-        <h3>Hello! I'm a Full Stack Developer</h3>
-        <p>For me, technology isn't just about writing code — it's about crafting solutions that make people's lives easier, smoother, and more efficient. I believe in working on projects that are impactful not only from a technical perspective but also from the user's point of view.</p>
-        <p>Working across both frontend and backend has taught me that great software isn't just a collection of features — it's a well-thought-out story that understands the user's needs and delivers solutions accordingly.</p>
-        <p>I'm always on a journey of learning, experimenting, and improving myself. Exploring new technologies, contributing to open-source projects, and engaging with the developer community are not just hobbies for me — they are essential parts of my growth as a developer and as a person. They inspire me to think differently and evolve every day.</p>
-        <p>If you'd ever like to connect over tech, discuss ideas, or share learnings — I'm always open and eager to collaborate.</p>
+        <h4>Hello! I'm a Full Stack Developer with a passion for data and innovation.</h4><br>
+        <p>I’m driven by the passion to create digital solutions that truly make a 
+        difference. For me, technology goes beyond writing code — it's about crafting
+        experiences that are seamless, intuitive, and meaningful for real people.
+      </p>
+        <p>Working across both frontend and backend has taught me that great software is 
+        not just a set of features — it's a well-designed journey that understands user 
+        needs, solves problems intelligently, and delivers value with precision.</p>
+        <p>My interest in data analysis helps me view problems from a new perspective. 
+        I enjoy exploring patterns hidden in data and turning insights into smarter, 
+        data-driven decisions. Whether it's transforming raw data into clear stories 
+        or optimizing workflows through analytics, I love combining development and 
+        data to build better solutions.</p>
+        <p> I'm constantly learning, experimenting, and pushing myself to grow. Exploring 
+        new technologies, contributing to open-source projects, and engaging with the 
+        developer community aren’t just hobbies — they are essential pillars of my 
+        professional and personal evolution. They inspire me to think creatively, 
+        improve continuously, and innovate fearlessly.</p>
+        <p>
+        If you'd like to connect, share ideas, collaborate on projects, or simply talk 
+        tech — I’m always open and excited to engage.
+      </p>
         <a href="#contact" class="btn btn-primary">Let's Connect</a>
       </div>
       <div class="about-image">
@@ -402,156 +440,167 @@
     </div>
   </section>
 
-  <!-- Certifications Section -->
-  <section id="certifications">
-    <h2 class="section-title">Certifications</h2>
-    <p class="section-subtitle">My professional credentials</p>
-    <div class="certifications-grid">
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Full Stack Web Development</h4>
-            <p class="issuer">NoviTech</p>
-          </div>
+<!-- Certifications Section -->
+<section id="certifications">
+  <h2 class="section-title">Certifications</h2>
+  <p class="section-subtitle">My professional credentials</p>
+  <div class="certifications-grid">
+    
+    <!-- Certificate 1: Full Stack Web Development - NoviTech -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-code"></i>
         </div>
-        <div class="cert-description">
-          <p>Complete Full stack course covering fundamentals to advanced concepts.</p>
+        <div class="cert-title">
+          <h4>Full Stack Web Development</h4>
+          <p class="issuer">NoviTech</p>
         </div>
-        <button class="btn view-cert" data-cert="1">View Certificate</button>
       </div>
-      
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Power BI</h4>
-            <p class="issuer">NoviTech</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Successfully completed certification in Power BI with expertise in data visualization, dashboard creation, and DAX functions for business intelligence.</p>
-        </div>
-        <button class="btn view-cert" data-cert="2">View Certificate</button>
+      <div class="cert-description">
+        <p>Complete Full stack course covering fundamentals to advanced concepts.</p>
       </div>
-      
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Data Analytics</h4>
-            <p class="issuer">NoviTech</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Certified in Data Analytics with skills in Power BI, Excel, and data visualization.</p>
-        </div>
-        <button class="btn view-cert" data-cert="3">View Certificate</button>
-      </div>
-      
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Full Stack Web Development</h4>
-            <p class="issuer">Pantech.ai</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Certified in Full Stack Web Development with hands-on experience in front-end and back-end technologies.</p>
-        </div>
-        <button class="btn view-cert" data-cert="4">View Certificate</button>
-      </div>
-      
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Artificial Intelligence</h4>
-            <p class="issuer">Pantech.ai</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Certified in AI with practical knowledge of Python, data analysis, and deep learning techniques.</p>
-        </div>
-        <button class="btn view-cert" data-cert="5">View Certificate</button>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>SQL</h4>
-            <p class="issuer">Satish Dhawale</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Gained hands-on experience in writing complex SQL queries and managing relational databases.</p>
-        </div>
-        <button class="btn view-cert" data-cert="6">View Certificate</button>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Power BI Micro Course</h4>
-            <p class="issuer">Satish Dhawale</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Earned Power BI Micro Course certification demonstrating basic proficiency in business intelligence tools.</p>
-        </div>
-        <button class="btn view-cert" data-cert="7">View Certificate</button>
-      </div>
-      
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Excel</h4>
-            <p class="issuer">Satish Dhawale</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Trained in advanced Excel tools for data handling and business insights.</p>
-        </div>
-        <button class="btn view-cert" data-cert="8">View Certificate</button>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-header">
-          <div class="cert-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="cert-title">
-            <h4>Tally Prime</h4>
-            <p class="issuer">Sharp Education Society</p>
-          </div>
-        </div>
-        <div class="cert-description">
-          <p>Trained in Tally Prime for maintaining accurate business and financial records and gained practical knowledge of Tally Prime.</p>
-        </div>
-        <button class="btn view-cert" data-cert="9">View Certificate</button>
-      </div>
+      <button class="btn view-cert" data-cert="1">View Certificate</button>
     </div>
-  </section>
+    
+    <!-- Certificate 2: Power BI - NoviTech -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <div class="cert-title">
+          <h4>Power BI</h4>
+          <p class="issuer">NoviTech</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Successfully completed certification in Power BI with expertise in data visualization, dashboard creation, and DAX functions for business intelligence.</p>
+      </div>
+      <button class="btn view-cert" data-cert="2">View Certificate</button>
+    </div>
+    
+    <!-- Certificate 3: Data Analytics - NoviTech -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="cert-title">
+          <h4>Data Analytics</h4>
+          <p class="issuer">NoviTech</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Certified in Data Analytics with skills in Power BI, Excel, and data visualization.</p>
+      </div>
+      <button class="btn view-cert" data-cert="3">View Certificate</button>
+    </div>
+    
+    <!-- Certificate 4: Full Stack Web Development - Pantech.ai -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <div class="cert-title">
+          <h4>Full Stack Web Development</h4>
+          <p class="issuer">Pantech.ai</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Certified in Full Stack Web Development with hands-on experience in front-end and back-end technologies.</p>
+      </div>
+      <button class="btn view-cert" data-cert="4">View Certificate</button>
+    </div>
+    
+    <!-- Certificate 5: Artificial Intelligence - Pantech.ai -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="cert-title">
+          <h4>Artificial Intelligence</h4>
+          <p class="issuer">Pantech.ai</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Certified in AI with practical knowledge of Python, data analysis, and deep learning techniques.</p>
+      </div>
+      <button class="btn view-cert" data-cert="5">View Certificate</button>
+    </div>
+
+    <!-- Certificate 6: SQL - Satish Dhawale -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-database"></i>
+        </div>
+        <div class="cert-title">
+          <h4>SQL</h4>
+          <p class="issuer">Satish Dhawale</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Gained hands-on experience in writing complex SQL queries and managing relational databases.</p>
+      </div>
+      <button class="btn view-cert" data-cert="6">View Certificate</button>
+    </div>
+
+    <!-- Certificate 7: Power BI Micro Course - Satish Dhawale -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <div class="cert-title">
+          <h4>Power BI Micro Course</h4>
+          <p class="issuer">Satish Dhawale</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Earned Power BI Micro Course certification demonstrating basic proficiency in business intelligence tools.</p>
+      </div>
+      <button class="btn view-cert" data-cert="7">View Certificate</button>
+    </div>
+    
+    <!-- Certificate 8: Excel - Satish Dhawale -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-file-excel"></i>
+        </div>
+        <div class="cert-title">
+          <h4>Excel</h4>
+          <p class="issuer">Satish Dhawale</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Trained in advanced Excel tools for data handling and business insights.</p>
+      </div>
+      <button class="btn view-cert" data-cert="8">View Certificate</button>
+    </div>
+
+    <!-- Certificate 9: Tally Prime - Sharp Education Society -->
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-logo">
+          <i class="fas fa-calculator"></i>
+        </div>
+        <div class="cert-title">
+          <h4>Tally Prime</h4>
+          <p class="issuer">Sharp Education Society</p>
+        </div>
+      </div>
+      <div class="cert-description">
+        <p>Trained in Tally Prime for maintaining accurate business and financial records and gained practical knowledge of Tally Prime.</p>
+      </div>
+      <button class="btn view-cert" data-cert="9">View Certificate</button>
+    </div>
+    
+  </div>
+</section>
 
   <!-- Projects Section -->
   <section id="projects">
@@ -724,82 +773,74 @@
     </div>
   </section>
 
-  <!-- UPDATED CONTACT SECTION -->
-<!-- Apne index.html me is section ko replace kar dijiye -->
-
-<!-- UPDATED CONTACT SECTION -->
-<section id="contact">
-  <h2 class="section-title">Contact Me</h2>
-  <p class="section-subtitle">Let's get in touch</p>
-  <div class="contact-container">
-    <div class="contact-info">
-      <h3>Get In Touch</h3>
-      <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-      <div class="contact-details">
-        <!-- Email Box -->
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <strong>Email</strong>
-            <p>abhishek242443@gmail.com</p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="section-subtitle">Let's get in touch</p>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>abhishek242443@gmail.com</p>
+            </div>
           </div>
-        </div>
-        
-        <!-- LinkedIn Box -->
-        <div class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <div>
-            <strong>LinkedIn</strong>
-            <p><a href="https://linkedin.com/in/abhishek-sahani-447851341" target="_blank" style="color: var(--primary); text-decoration: none; transition: all 0.3s ease;">Abhishek Sahani</a></p>
+          
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <strong>LinkedIn</strong>
+              <p><a href="https://linkedin.com/in/abhishek-sahani-447851341" target="_blank" style="color: var(--primary); text-decoration: none; transition: all 0.3s ease;">Abhishek Sahani</a></p>
+            </div>
           </div>
-        </div>
-        
-        <!-- Location Box -->
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <div>
-            <strong>Location</strong>
-            <p>India</p>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Location</strong>
+              <p>India</p>
+            </div>
           </div>
         </div>
       </div>
+      
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name" minlength="2">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            <small class="email-hint"></small>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" required placeholder="Subject" minlength="3">
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Your message..." minlength="10"></textarea>
+          </div>
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div class="form-message"></div>
+        </form>
+      </div>
     </div>
-    
-    <!-- Contact Form -->
-    <div class="contact-form">
-      <form id="contactForm">
-        <div class="form-group">
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required placeholder="Your Name" minlength="2">
-        </div>
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-          <small class="email-hint"></small>
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject *</label>
-          <input type="text" id="subject" name="subject" required placeholder="Subject" minlength="3">
-        </div>
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" required placeholder="Your message..." minlength="10"></textarea>
-        </div>
-        <button type="submit" class="btn">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
-        <div class="form-message"></div>
-      </form>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer>
     <div class="social-links">
       <a href="https://github.com/Abhi930941?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/abhishek-sahani-447851341" target="_blank"><i class="fab fa-linkedin"></i></a>
-      
     </div>
     <p>&copy; 2025 Abhishek Sahani. All Rights Reserved.</p>
   </footer>
@@ -811,8 +852,13 @@
       <img id="certImage" src="" alt="Certificate">
     </div>
   </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="config.js"></script>
   <script src="script.js"></script>
+
+  <!-- Sparkles Animation Container -->
+<!-- This will be automatically created by JavaScript -->
+
 </body>
 </html>
