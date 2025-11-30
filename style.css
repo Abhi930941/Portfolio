@@ -7019,3 +7019,14 @@ section.animate-in::before {
 /* ============================================
    END OF SCROLL ANIMATIONS
    ============================================ */
+
+   /* Fix CTA button text alignment on mobile */
+@media (max-width: 600px) {
+  .cta-buttons .btn {
+    justify-content: center;
+    text-align: center;
+    padding: 1.2rem 2rem;
+  }
+}
+
+
