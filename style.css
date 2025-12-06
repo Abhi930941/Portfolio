@@ -2556,6 +2556,15 @@ body.dark-mode .cert-visual:hover {
   }
 }
 
+.view-cert-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 280px; /* Mobile */
+}
+
 /* ============================================
  CERTIFICATIONS 
 ============================================ */
