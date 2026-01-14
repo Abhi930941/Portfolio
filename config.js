@@ -92,7 +92,28 @@ const CONFIG = {
       description: 'A fully responsive e-commerce website that allows users to browse, search, and purchase fashion and lifestyle products.',
       tech: ['HTML5', 'CSS3', 'JavaScript'],
       liveUrl: 'https://abhi930941.github.io/Ecommerce-Web/'
-    }
+    },
+    8: {
+    thumbnail: 'images/projects/botanic.jpg',  
+    title: 'Smart Botanical Assistant',
+    description: 'A React and Tailwind CSS–based Botanical App that displays plant-related information through a clean and user-friendly interface.',
+    tech: ['React.js','Vite', 'Tailwind CSS'],  
+    liveUrl: 'https://abhi930941.github.io/botanical-app/'  
+  },
+  9: {
+    thumbnail: 'images/projects/expencetracker.jpg',
+    title: 'ExpenseFlow',
+    description: 'A simple Expense Tracker web app to manage income, expenses, budgets, and view financial reports.',
+    tech: ['React.js', 'Tailwind', 'Recharts'],
+    liveUrl: 'https://abhi930941.github.io/expense-tracker/'
+  },
+  10: {
+    thumbnail: 'images/projects/qr-hub.jpg',
+    title: 'Smart QR Hub',
+    description: 'A React-based web application that allows users to generate and scan QR codes with a fast, secure, and user-friendly interface.',
+    tech: ['React.js', 'Tailwind', 'Clerk Auth'],
+    liveUrl: 'https://smart-qr-hub.vercel.app/'
+  }
   }
 }; 
 
