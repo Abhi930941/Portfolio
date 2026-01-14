@@ -883,7 +883,6 @@ function showFormMessage(message, type) {
   
   formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   
-  // Auto-hide after 5 seconds
   setTimeout(() => {
     formMessage.classList.add('hiding');
     
