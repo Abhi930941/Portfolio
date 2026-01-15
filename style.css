@@ -230,13 +230,12 @@ nav.scrolled {
 /* ============================================
     HERO SECTION 
    ============================================ */
-
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rem 2rem 4rem;
+  padding: calc(5rem + 30px) 2rem 3rem;
   background: linear-gradient(135deg, #091653 0%, #611aa7 100%);
   position: relative;
   overflow: hidden;
@@ -497,11 +496,11 @@ nav.scrolled {
 
 /* Typing Animation Container */
 .typing-container {
-  min-height: 80px;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   animation: fadeInUp 1s ease 0.4s backwards;
 }
 
@@ -550,28 +549,29 @@ nav.scrolled {
 
 .hero-content > p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   opacity: 0.95;
   animation: fadeInUp 1s ease 0.6s backwards;
   color: #ffffff;
-  line-height: 1.8;
+  line-height: 1.6;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* CTA Buttons */
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
   animation: fadeInUp 1s ease 0.8s backwards;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 1.2rem 2.5rem;
+  padding: 0.8rem 2.5rem;
+  line-height: 1.2;
   border: none;
   border-radius: 50px;
   font-weight: 700;
@@ -643,6 +643,17 @@ nav.scrolled {
 .btn:hover i {
   transform: translateX(5px);
 }
+
+@media (max-width: 768px) {
+
+  .cta-buttons .btn {
+    padding: 0.8rem 2.5rem !important;  
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+}
+
 
 /* ============================================
     ABOUT SECTION 
@@ -1109,6 +1120,38 @@ margin-bottom: 0.5rem;
 font-size: 0.95rem;
 color: var(--text);
 font-weight: 600;
+}
+
+/* Mobile Image for 16/9*/
+@media (max-width: 768px) {
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    transform: none;
+  }
+
+  .about-image-ratio {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+
+#about .btn {
+  padding: 0.7rem 3rem;
 }
 /* ============================================
  EDUCATION TIMELINE 
@@ -2155,6 +2198,66 @@ font-weight: 500;
 .skill-card-3d[data-skill="tally"] .skill-icon i { color: #ff6b35; text-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
 .skill-card-3d[data-skill="git"] .skill-icon i { color: #f05032; text-shadow: 0 0 20px rgba(240, 80, 50, 0.5); }
 .skill-card-3d[data-skill="github"] .skill-icon i { color: #181717; text-shadow: 0 0 20px rgba(24, 23, 23, 0.4); }
+
+@media (max-width: 768px) {
+
+  .skills-grid {
+    gap: 1.8rem !important;
+  }
+
+  .skill-card-3d {
+    height: 170px !important;
+    transform: none !important;
+  }
+
+  .skill-card-inner {
+    padding: 1.3rem 1rem !important;
+    border-radius: 20px;
+  }
+
+  .skill-icon {
+    height: 65px !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .skill-icon i {
+    font-size: 3.6rem !important;
+  }
+
+  .skill-icon img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .skill-card-inner h4 {
+    font-size: 1.1rem !important;
+  }
+
+  .skill-card-inner p {
+    font-size: 0.82rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .category-title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+
+    white-space: nowrap;   
+    font-size: 1.3rem;     
+  }
+
+  .category-title i {
+    margin-right: 0.6rem;
+    flex-shrink: 0;        
+  }
+
+}
+
 /* ============================================
  INTERNSHIPS SECTION 
 ============================================ */
