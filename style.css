@@ -2202,7 +2202,7 @@ font-weight: 500;
 @media (max-width: 768px) {
 
   .skills-grid {
-    gap: 1.8rem !important;
+    gap: 1rem !important;
   }
 
   .skill-card-3d {
