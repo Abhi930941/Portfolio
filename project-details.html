@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Project Details - Professional Portfolio">
+  <title>Project Details - Abhishek Sahani</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-details.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="project-details-page">
+  
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Project Details Container -->
+  <div class="project-details-container">
+    
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">
+      <i class="fas fa-arrow-left"></i>
+      <span>Back to Portfolio</span>
+    </button>
+
+    <!-- Project Header -->
+    <div class="project-header">
+      <div class="project-header-content">
+        <div class="project-category" id="projectCategory">Web Application</div>
+        <h1 class="project-title" id="projectTitle">Project Title</h1>
+        <p class="project-tagline" id="projectTagline">Brief project description</p>
+      </div>
+    </div>
+
+    <!-- Project Content - Two Column Layout for Desktop -->
+    <div class="project-content-wrapper">
+      
+      <!-- Left Column -->
+      <div>
+        <!-- Overview Section -->
+        <section class="detail-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <i class="fas fa-info-circle"></i>
+            </div>
+            <h2>Overview</h2>
+          </div>
+          <p class="section-content" id="projectOverview"></p>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="detail-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h2>Tech Stack</h2>
+          </div>
+          <div class="tech-stack-grid" id="techStackGrid"></div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="detail-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h2>How to Use</h2>
+          </div>
+          <ol class="user-guide-list" id="userGuideList"></ol>
+        </section>
+      </div>
+
+      <!-- Right Column -->
+      <div>
+        <!-- Features Section -->
+        <section class="detail-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h2>Key Features</h2>
+          </div>
+          <div class="features-grid" id="featuresGrid"></div>
+        </section>
+
+        <!-- Why This Matters Section -->
+        <section class="detail-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h2>Why It Matters</h2>
+          </div>
+          <p class="section-content" id="whyMatters"></p>
+        </section>
+      </div>
+      
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <h3>Interested in this project?</h3>
+      <p>View the live demo or check out more projects</p>
+      <div class="cta-buttons">
+        <a href="#" id="livePreviewLink2" class="cta-btn primary" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-rocket"></i>
+          View Live
+        </a>
+        <a href="index.html#projects" class="cta-btn secondary">
+          <i class="fas fa-th"></i>
+          All Projects
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="details-footer">
+    <div class="social-links">
+      <a href="https://github.com/Abhi930941?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/abhishek-sahani-447851341" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>&copy;Abhishek Sahani. All Rights Reserved.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="project-details.js"></script>
+</body>
+</html>

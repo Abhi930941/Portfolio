@@ -1,10 +1,4 @@
 // ============================================
-// PROFESSIONAL PORTFOLIO - JAVASCRIPT
-// Author: Abhishek Sahani
-// Version: 2.0 - Optimized & Well-Structured
-// ============================================
-
-// ============================================
 // CONFIGURATION & CONSTANTS
 // ============================================
 
@@ -16,14 +10,10 @@ const ANIMATION_CONFIG = {
 
 const TYPING_CONFIG = {
   texts: [
-    "Full Stack Developer",
-    "Frontend Developer",
-    "React.js Developer",
-    "Python Developer",
-    "Web Developer",
-    "Data Analytics Enthusiast",
-    "Tech Enthusiast",
-    "Problem Solver"
+    "Frontend-Focused Full Stack Developer",
+    "React.js Frontend Specialist",
+    "Experienced with Python & Flask Backend",
+    "Modern Web UI Builder"
   ],
   typeSpeed: 100,
   deleteSpeed: 50,
@@ -80,7 +70,7 @@ window.addEventListener('load', function() {
     loadingSpinner.style.display = 'none';
   }
   
-  // Initialize advanced features
+  // Initialize features
   initScrollAnimations();
   initScrollProgress();
   animateOnClick();
@@ -511,11 +501,11 @@ function updateProjectCard(card, data, id) {
     testImg.src = data.thumbnail;
   }
   
-  // Update content
+  // content
   if (data.title) title.textContent = data.title;
   if (data.description) description.textContent = data.description;
   
-  // Update tech tags
+  // tech tags
   if (data.tech && data.tech.length > 0) {
     techTags.innerHTML = '';
     data.tech.forEach(tech => {
@@ -526,7 +516,7 @@ function updateProjectCard(card, data, id) {
     });
   }
   
-  // Update live URL
+  // live URL
   if (data.liveUrl) {
     liveBtn.href = data.liveUrl;
     liveBtn.setAttribute('target', '_blank');
@@ -578,6 +568,9 @@ function initializeCertifications() {
     return;
   }
   
+  // initially hidden Modal
+  modal.style.display = 'none';
+  
   const certificates = typeof CONFIG !== 'undefined' && CONFIG.CERTIFICATES ? CONFIG.CERTIFICATES : {};
   
   console.log(`📜 Certificate paths configured: ${Object.keys(certificates).length}`);
@@ -588,11 +581,17 @@ function initializeCertifications() {
       const certId = this.getAttribute('data-cert');
       const certPath = certificates[certId];
       
-      console.log(`Opening certificate ${certId}: ${certPath}`);
+      console.log(`Opening certificate ${certId}:`, certPath);
       
-      if (certPath && certPath.trim() !== '') {
+      // Check if it's an array (multiple certificates)
+      if (Array.isArray(certPath)) {
+        console.log('✅ Multiple certificates detected');
+        showMultipleCertificatesModal(modal, certPath, certId);
+      } else if (certPath && certPath.trim() !== '') {
+        console.log('✅ Single certificate');
         showCertificateModal(modal, certPath, certId);
       } else {
+        console.warn('⚠️ No certificate found');
         showNoCertificateMessage(modal, certId);
       }
     });
@@ -616,6 +615,156 @@ function initializeCertifications() {
   });
   
   console.log('✅ Certifications initialized');
+}
+
+// Show Multiple Certificates with Navigation
+function showMultipleCertificatesModal(modal, imagePaths, certId) {
+  const modalContent = modal.querySelector('.modal-content');
+  let currentIndex = 0;
+  
+  // Show modal
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  
+  console.log('Opening multiple certs, total:', imagePaths.length);
+  
+  // Create slider HTML
+  function renderCertificate() {
+    const testImg = new Image();
+    
+    testImg.onload = function() {
+      modalContent.innerHTML = `
+        <div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; width: 100%; max-width: 100%;">
+          <img id="certImage" src="${imagePaths[currentIndex]}" alt="Certificate ${currentIndex + 1}" style="max-width: 85%; max-height: 70vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);"/>
+          
+          <!-- Navigation Controls -->
+          <div class="cert-nav-controls" style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.1); padding: 1rem 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); flex-wrap: nowrap; justify-content: center;">
+            <button id="prevCert" style="
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              color: white;
+              border: none;
+              padding: 0.7rem 1.2rem;
+              border-radius: 8px;
+              cursor: pointer;
+              font-weight: 600;
+              font-size: 0.95rem;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              white-space: nowrap;
+            ">
+              <i class="fas fa-chevron-left"></i> <span class="nav-text">Previous</span>
+            </button>
+            
+            <span id="counter" style="
+              color: white;
+              font-weight: 700;
+              font-size: 1rem;
+              min-width: 100px;
+              text-align: center;
+              background: rgba(99, 102, 241, 0.3);
+              padding: 0.5rem 1rem;
+              border-radius: 8px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              white-space: nowrap;
+            ">${currentIndex + 1} / ${imagePaths.length}</span>
+            
+            <button id="nextCert" style="
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              color: white;
+              border: none;
+              padding: 0.7rem 1.2rem;
+              border-radius: 8px;
+              cursor: pointer;
+              font-weight: 600;
+              font-size: 0.95rem;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              white-space: nowrap;
+            ">
+              <span class="nav-text">Next</span> <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          
+          <!-- Thumbnail Preview -->
+          <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
+            ${imagePaths.map((path, idx) => `
+              <img 
+                src="${path}" 
+                alt="Thumbnail ${idx + 1}"
+                class="cert-thumbnail"
+                data-index="${idx}"
+                style="
+                  width: 70px;
+                  height: 70px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  cursor: pointer;
+                  border: 3px solid ${idx === currentIndex ? '#ffd700' : 'rgba(255, 255, 255, 0.3)'};
+                  transition: all 0.3s ease;
+                  opacity: ${idx === currentIndex ? '1' : '0.6'};
+                "
+              />
+            `).join('')}
+          </div>
+        </div>
+      `;
+      
+      // Event listeners for Previous button
+      document.getElementById('prevCert').addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          renderCertificate();
+        }
+      });
+      
+      // Event listeners for Next button
+      document.getElementById('nextCert').addEventListener('click', () => {
+        if (currentIndex < imagePaths.length - 1) {
+          currentIndex++;
+          renderCertificate();
+        }
+      });
+      
+      // Event listeners for thumbnails
+      document.querySelectorAll('.cert-thumbnail').forEach(thumb => {
+        thumb.addEventListener('click', function() {
+          currentIndex = parseInt(this.getAttribute('data-index'));
+          renderCertificate();
+        });
+      });
+      
+      // Keyboard navigation
+      const handleKeyboard = (e) => {
+        if (modal.style.display === 'block') {
+          if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            currentIndex--;
+            renderCertificate();
+          } else if (e.key === 'ArrowRight' && currentIndex < imagePaths.length - 1) {
+            currentIndex++;
+            renderCertificate();
+          }
+        }
+      };
+      
+      window.removeEventListener('keydown', handleKeyboard); // Remove old listener
+      window.addEventListener('keydown', handleKeyboard);
+      
+      console.log('✅ Certificate rendered:', currentIndex + 1);
+    };
+    
+    testImg.onerror = function() {
+      console.error('❌ Certificate image not found:', imagePaths[currentIndex]);
+      showCertificateError(modalContent, certId, imagePaths[currentIndex]);
+    };
+    
+    testImg.src = imagePaths[currentIndex];
+  }
+  
+  renderCertificate();
 }
 
 function showCertificateModal(modal, imagePath, certId) {
@@ -660,21 +809,11 @@ function showCertificateError(modalContent, certId, imagePath) {
           ${imagePath}
         </code>
       </div>
-      <div style="text-align: left; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
-        <p style="font-weight: 600; margin-bottom: 0.75rem;">✅ Checklist:</p>
-        <ul style="font-size: 0.9rem; line-height: 1.8; padding-left: 1.5rem;">
-          <li>Check if 'images/certificates/' folder exists</li>
-          <li>Verify image file name matches config.js</li>
-          <li>Ensure file format is .jpg, .png, or .jpeg</li>
-          <li>Check file path spelling (case-sensitive)</li>
-        </ul>
-      </div>
       <button onclick="document.getElementById('certModal').style.display='none'; document.body.style.overflow='auto';" 
               style="padding: 0.75rem 2rem; background: #6366f1; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 1rem;">
         Close
       </button>
     </div>
-    <img id="certImage" src="" alt="Certificate" style="display: none;">
   `;
 }
 
@@ -690,32 +829,22 @@ function showNoCertificateMessage(modal, certId) {
       <p style="margin-bottom: 1.5rem; opacity: 0.9;">
         Please add certificate #${certId} path in config.js file.
       </p>
-      <div style="text-align: left; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
-        <p style="font-weight: 600; margin-bottom: 0.75rem;">Steps:</p>
-        <ol style="font-size: 0.9rem; line-height: 1.8; padding-left: 1.5rem;">
-          <li>Add your certificate image to 'images/certificates/' folder</li>
-          <li>Open config.js file</li>
-          <li>Update CERTIFICATES object with the file path</li>
-          <li>Refresh the page</li>
-        </ol>
-      </div>
       <button onclick="document.getElementById('certModal').style.display='none'; document.body.style.overflow='auto';" 
               style="padding: 0.75rem 2rem; background: #6366f1; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 1rem;">
         Got It
       </button>
     </div>
-    <img id="certImage" src="" alt="Certificate" style="display: none;">
   `;
 }
-
 function closeCertModal(modal) {
   modal.style.display = 'none';
   document.body.style.overflow = 'auto';
   
   const modalContent = modal.querySelector('.modal-content');
-  modalContent.innerHTML = '<img id="certImage" src="" alt="Certificate">';
+  if (modalContent) {
+    modalContent.innerHTML = '<img id="certImage" src="" alt="Certificate">';
+  }
 }
-
 // ============================================
 // CONTACT FORM SYSTEM
 // ============================================
@@ -960,7 +1089,7 @@ function initializeImageOptimization() {
 }
 
 // ============================================
-// ADVANCED SCROLL ANIMATIONS
+// SCROLL ANIMATIONS
 // ============================================
 
 function initScrollAnimations() {
@@ -1570,7 +1699,7 @@ function initializeBackToTop() {
       behavior: 'smooth'
     });
     
-    // Add click animation
+    // Click animation
     this.style.transform = 'translateY(-5px) scale(0.9)';
     setTimeout(() => {
       this.style.transform = '';
@@ -1580,16 +1709,38 @@ function initializeBackToTop() {
   console.log('✅ Back to top button initialized');
 }
 
-// Add to window load event
+// Window load event
 window.addEventListener('load', function() {
-  // ... existing code ...
   
   // Initialize back to top button
   initializeBackToTop();
-  
-  // ... rest of existing code ...
+
 });
+
+
+/**
+ * Navigate to project details page
+ * @param {number} projectId - The ID of the project to view
+ */
+function viewProjectDetail(projectId) {
+  // Validate project ID
+  if (!projectId || projectId < 1 || projectId > 10) {
+    console.error('Invalid project ID:', projectId);
+    return;
+  }
+  
+  // Check if project exists in CONFIG
+  if (typeof CONFIG !== 'undefined' && CONFIG.PROJECTS && CONFIG.PROJECTS[projectId]) {
+    console.log(`Navigating to project ${projectId}: ${CONFIG.PROJECTS[projectId].title}`);
+    
+    // Navigate to project details page with project ID as query parameter
+    window.location.href = `project-details.html?id=${projectId}`;
+  } else {
+    console.error(`Project ${projectId} not found in configuration`);
+    alert('Project details not available at this time.');
+  }
+}
+
 // ============================================
 // END OF SCRIPT.JS
 // ============================================
-
