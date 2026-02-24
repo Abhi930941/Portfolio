@@ -769,29 +769,45 @@ function showMultipleCertificatesModal(modal, imagePaths, certId) {
 
 function showCertificateModal(modal, imagePath, certId) {
   const modalContent = modal.querySelector('.modal-content');
-  
-  // Reset modal
-  modalContent.innerHTML = '<img id="certImage" src="" alt="Certificate" style="opacity: 0.5;">';
-  const newCertImage = document.getElementById('certImage');
-  
-  // Show modal
+
+  modalContent.innerHTML = `
+    <div id="certLoadingSpinner" style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      color: white;
+      padding: 3rem;
+    ">
+      <div style="
+        width: 50px; height: 50px;
+        border: 4px solid rgba(255,255,255,0.2);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      "></div>
+      <p style="font-size: 1rem; opacity: 0.85; font-weight: 500;">Loading certificate...</p>
+    </div>
+    <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+  `;
+
   modal.style.display = 'block';
   document.body.style.overflow = 'hidden';
-  
-  // Load image
+
   const testImg = new Image();
-  
+
   testImg.onload = function() {
-    newCertImage.src = imagePath;
-    newCertImage.style.opacity = '1';
+
+    modalContent.innerHTML = `<img id="certImage" src="${imagePath}" alt="Certificate" style="max-width:90%; max-height:80vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,0.5);">`;
     console.log('✅ Certificate loaded successfully');
   };
-  
+
   testImg.onerror = function() {
     console.error('❌ Certificate image not found');
     showCertificateError(modalContent, certId, imagePath);
   };
-  
+
   testImg.src = imagePath;
 }
 
@@ -1648,7 +1664,6 @@ window.addEventListener('load', () => {
 // ============================================
 
 function initializeBackToTop() {
-  // Create back to top button
   const backToTop = document.createElement('button');
   backToTop.className = 'back-to-top';
   backToTop.setAttribute('aria-label', 'Back to top');
