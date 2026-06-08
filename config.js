@@ -71,7 +71,7 @@ const CONFIG = {
       title: 'Sangam Music',
       description: 'Full-stack music streaming app that searches YouTube & Spotify for Indian songs with mood-based recommendations. One interface, two platforms.',
       tech: ['HTML5', 'CSS3','Javascript', 'Python+Flask','YouTube Data API', 'Spotify API'],
-      liveUrl: 'https://sangam-music.onrender.com',
+      liveUrl: 'https://abhi930941.github.io/Sangam-music-web/',
 
       overview: 'Music enthusiasts often struggle to find curated Indian music across different platforms, as most services lack mood-based recommendations for Bollywood and regional songs. Sangam solves this by bringing music into one unified platform with personalized, mood-based discovery and a simple, intuitive interface.',
       
