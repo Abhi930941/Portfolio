@@ -3311,6 +3311,78 @@ body.dark-mode .cert-visual:hover {
   }
 }
 
+.internships-timeline {
+  --timeline-x: 10px;
+  position: relative;
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+}
+
+.internships-timeline::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: var(--timeline-x);
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transform-origin: top;
+  animation: internshipLineGrow 1.2s ease forwards;
+}
+
+@keyframes internshipLineGrow {
+  from { transform: translateX(-50%) scaleY(0); }
+  to   { transform: translateX(-50%) scaleY(1); }
+}
+
+.internship-timeline-item {
+  position: relative;
+  padding-left: calc(var(--timeline-x) + 1.8rem);
+  margin-bottom: 3rem;
+}
+
+.internship-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.internship-timeline-item .timeline-dot {
+  position: absolute;
+  left: var(--timeline-x);
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px var(--white), 0 0 30px rgba(99, 102, 241, 0.5);
+  z-index: 10;
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+body.dark-mode .internship-timeline-item .timeline-dot {
+  box-shadow: 0 0 0 6px #0f172a, 0 0 30px rgba(99, 102, 241, 0.7);
+}
+
+.internship-timeline-item .internships-container {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .internships-timeline {
+    --timeline-x: 8px;
+  }
+
+  .internship-timeline-item {
+    padding-left: calc(var(--timeline-x) + 1.4rem);
+  }
+
+  .internship-timeline-item .timeline-dot {
+    width: 16px;
+    height: 16px;
+  }
+}
 /* ============================================
    EDUCATION SECTION 
 ============================================ */

@@ -61,7 +61,11 @@ const CONFIG = {
     'images/certificates/excel-satish.jpg',
     'images/certificates/tally-sharp.jpg',
     'images/certificates/chatgpt-juno.jpeg'
-  ]
+  ],
+  11: [
+  'images/certificates/kodbud-certificate.jpg',
+  'images/certificates/kodbud-recommendation-letter.jpg'
+],
 },
   
   // ==================== PROJECT IMAGES & DETAILED INFO ====================
